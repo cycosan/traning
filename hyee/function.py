@@ -2,24 +2,24 @@
 displacement1=input("enter displacement")'''
 
 
-def caeser_cipher(name,displacement): #definig a fucniton
+def caeser_cipher(name,displacement):
 	finalstring=""
 	finalstri1=""
-	for char in name: #definig each char in name
-		test=ord(char) #Asci value of char
-		if(test>=60and test<=90): #if it is captial letter
-			asci=ord(char)+int(displacement) #add the displacement in  char
+	for char in name:
+		test=ord(char)
+		if(test>=60and test<=90):
+			asci=ord(char)+int(displacement)
 	
 		
-			if(asci>90):#if displace  yelid value more than Z start from begining
+			if(asci>90):
 				asci=asci-90
 				asci=64+asci
 				finalstring=finalstring+chr(asci)
 			else:
-				finalstring=finalstring+chr(asci)#just add it to the final string
+				finalstring=finalstring+chr(asci)
 			
 		elif(test>=97 and test<=122):
-			asci=ord(char)+int(displacement) #For lowercase
+			asci=ord(char)+int(displacement)
 		
 			
 			if(asci>122):

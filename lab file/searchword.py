@@ -10,13 +10,18 @@ i = 1
 for country in lines:
     i=int(len(country)-2)
     k=int(len(searchItem))
-    for l in range(0,k):
-        for j in range(0,i):
-            if(country[j+l]==searchItem[l]):
-                print(country)
+    if(country[0].lower()==searchItem[0]):#for intial term onlu
+        if searchItem in country.lower():
+            print(country)
+    elif(country[0].upper()==searchItem[0]):#for intial term onlu
+        if searchItem in country.upper():
+            print(country)
+            #print(country)
 
 
 
+        #if searchItem in country.lower(): #for any term in between or any place
+            #print(country)
 
 #print(lines)
 fileToRead.close()
