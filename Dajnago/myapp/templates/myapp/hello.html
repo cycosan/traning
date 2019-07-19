@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block body %}
+<h1>Hello welcoome to my porfie lieo</h1>
+<p>my name is {{name}}</p>
+<p>my name is {{comment}}</p>
+<ul>
+{% for skill in skills %}
+    <li>{{ skill }}</li>
+{% endfor %}
+</ul>
+{% endblock %}
+
