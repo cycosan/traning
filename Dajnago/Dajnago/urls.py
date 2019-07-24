@@ -23,7 +23,12 @@ urlpatterns = [
     path('profile/',views.profile),
     path('myapp/',include('myapp.urls')),
     path('add/',views.add),
-    path('submit/', views.submit)
+    path('submit/', views.submit),
+    path('addcomment/',views.addcomment),
+    path('viewadd/', views.showcomments),
+    path('deletecomment/',views.delcommments),
+    path('login/', views.login)
+
 
 
 ]

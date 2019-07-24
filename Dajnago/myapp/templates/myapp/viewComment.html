@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+
+{% block body %}
+<h1>Comments</h1>
+{% for comment in comments %}
+    {{comment.username}}
+    {{ comment.content}}
+<!--<button name{{comment.pk}} onclick="delete_comment({{comment.pk}} )">Delete</button>-->
+<!--    <br/>-->
+<!--<script>-->
+<!--$(document).ready(function{-->
+<!--    $('button').click(fucntion(){-->
+<!--    var id =$(this).attr('name')-->
+<!--    d=new FormData()-->
+<!--    d.append("comment_id",id)-->
+<!--    $.post('http://localhost:8000/deletecomment',d,function(r){-->
+<!--    alert(r)-->
+<!--    })-->
+
+<!--})-->
+<!--})-->
+<!--</script>-->
+<form action="http://localhost:8000/deletecomment/" method="post">
+    {% csrf_token %}
+    <input name="comment_id" value="{{ comment.pk }}" hidden>
+    <button type="submit">Delete</button>
+
+</form>
+<br/>
+{% endfor %}
+{% endblock %}
